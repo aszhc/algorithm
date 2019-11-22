@@ -1,8 +1,8 @@
 # encoding=utf8
 
-a = 1
-b = 2
-
-a,b = b,a
-print(a)
-print(b)
+s = "hello"
+i = "llo"
+if i in s:
+    print(s.index(i))
+else:
+    print("-1")
