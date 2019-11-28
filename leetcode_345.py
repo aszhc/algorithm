@@ -42,4 +42,3 @@ if __name__ == "__main__":
     a = s.reverseVowels('f*sbl(kjad)(@#vbgyy')
     print(a)
 
-

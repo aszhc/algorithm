@@ -1,8 +1,8 @@
+
 # encoding=utf8
 
-s = "hello"
-i = "llo"
-if i in s:
-    print(s.index(i))
-else:
-    print("-1")
+# for i in range(1,3):
+#     print(i)
+    
+nums = [1, 2, 3]
+print([] + [nums[0]])
