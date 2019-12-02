@@ -66,7 +66,7 @@ class Solution(object):
         g = num % 10  # 个位数字
 
         return Q[q] + B[b] + S[s] + G[g]
-
+        
 
 if __name__ == "__main__":
     S = Solution()
