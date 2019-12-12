@@ -48,5 +48,5 @@ class Solution(object):
 
 if __name__ == "__main__":
     Sol = Solution()
-    end = Sol.searchInsert([1,3,5,6,7],4)
+    end = Sol.searchInsert([1,3,5,6],2)
     print(end)
