@@ -1,7 +1,7 @@
 '''
 @Author: your name
 @Date: 2019-11-28 18:36:26
-@LastEditTime : 2020-01-13 22:45:45
+@LastEditTime : 2020-01-14 22:49:19
 @LastEditors  : Please set LastEditors
 @Description: In User Settings Edit
 @FilePath: /leetcode/home/zhou/algorithm/test.py
@@ -19,3 +19,4 @@
 
 # print(phone['2'[0]])
 
+print(float("inf"))
