@@ -23,3 +23,6 @@ if __name__ == '__main__':
     Sol = Solution()
     ans = Sol.replaceSpace(s)
     print(ans)
+
+
+
