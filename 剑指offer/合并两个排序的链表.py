@@ -22,4 +22,3 @@ class Solution:
         else:
             l2.next = self.Merge(l1, l2.next)
             return l2
-
