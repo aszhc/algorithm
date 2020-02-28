@@ -14,4 +14,5 @@ matrix = [
 #     print(row[2])
 
 
-print(str(5)+str(0))
+s = {1,2,3,4}
+print(type(s))
