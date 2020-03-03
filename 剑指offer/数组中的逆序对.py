@@ -21,7 +21,7 @@ class Solution:
         #     data.pop(data.index(i))
         # return res
         count, result = self.merge_sort(data)
-        return count%1000000007
+        return count % 1000000007
 
     def merge_sort(self, a_list):
         n = len(a_list)
@@ -50,7 +50,7 @@ class Solution:
                 # 当右边的元素被插入时，证明这个元素比左边的剩下的所有元素都小
                 # 可以组成len(left)-l个逆序对
                 count += len(left) - l
-        result += left[l:] + right[r:] 
+        result += left[l:] + right[r:]
         return count, result
 
 
