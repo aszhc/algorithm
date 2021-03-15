@@ -1,61 +1,87 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
 
-//func quickSort2(sortArray []int, left, right int) {
-//	if left < right {
-//		//key := sortArray[(left+right)/2]
-//		key := sortArray[right]
-//		i := left
-//		j := right
-//		for {
-//			for sortArray[i] < key {
-//				i++
-//			}
-//			for sortArray[j] > key {
-//				j--
-//			}
-//			if i >= j {
-//				break
-//			}
-//			sortArray[i], sortArray[j] = sortArray[j], sortArray[i]
-//		}
-//		quickSort2(sortArray, left, i-1)
-//		quickSort2(sortArray, j+1, right)
-//	}
-//}
-
-func quickSort2(arr []int) []int {
-	sort(arr, 0, len(arr) - 1)
-	return arr
-}
-
-func sort(arr []int, low, high int) {
-	if low < high {
-		pi := partition(arr, low, high)
-		sort(arr, low, pi-1)
-		sort(arr, pi+1, high)
-	}
-}
-
-func partition(arr []int, low, high int) int {
-	pivot := arr[high]
-	i := low-1
-
-	for j := low; j < high; j++ {
-		if arr[j] <= pivot {
-			i++
-			arr[i], arr[j] = arr[j], arr[i]
+// 冒泡排序
+func bubbleSort(nums []int) {
+	for i := 0; i < len(nums); i++ {
+		for j := 1; j < len(nums)-i; j++ {
+			if nums[j-1] > nums[j] {
+				nums[j-1], nums[j] = nums[j], nums[j-1]
+			}
 		}
 	}
+	fmt.Println(nums)
+}
 
-	arr[i+1], arr[high] = arr[high], arr[i+1]
+// 选择排序
+func selectSort(nums []int) {
+	for i := 0; i < len(nums); i++ {
+		for j := i + 1; j < len(nums); j++ {
+			if nums[i] > nums[j] {
+				nums[i], nums[j] = nums[j], nums[i]
+			}
+		}
+	}
+	fmt.Println(nums)
+}
 
-	return i+1
+// 插入排序
+func insertSort(nums []int) {
+	for i := 1; i < len(nums); i++ {
+		for j := i; j > 0; j-- {
+			if nums[j-1] > nums[j] {
+				nums[j-1], nums[j] = nums[j], nums[j-1]
+			}
+		}
+	}
+	fmt.Println(nums)
+}
+
+// 快速排序
+func quickSort(nums []int) {
+	sort(nums, 0, len(nums)-1)
+	fmt.Println(nums)
+}
+
+func sort(nums []int, low, high int) {
+	if low < high {
+		mid := partition(nums, low, high)
+		sort(nums, low, mid-1)
+		sort(nums, mid+1, high)
+	}
+}
+
+func partition(nums []int, low, high int) int {
+	pivot := nums[high]
+	i := low - 1
+	for j := low; j < high; j++ {
+		if nums[j] < pivot {
+			i++
+			nums[i], nums[j] = nums[j], nums[i]
+		}
+	}
+	nums[i+1], nums[high] = nums[high], nums[i+1]
+	return i + 1
+}
+
+func createNums(n int) []int {
+	var nums []int
+	rand.Seed(time.Now().Unix())
+	for i := 0; i < n; i++ {
+		nums = append(nums, rand.Intn(1000))
+	}
+	return nums
 }
 
 func main() {
-	nums := []int{5, 3, 1, 9, 4, 2, 8}
-	quickSort2(nums)
-	fmt.Println(nums)
+	nums := createNums(1000)
+	start := time.Now()
+	quickSort(nums)
+	elapsed := time.Since(start)
+	fmt.Println(elapsed)
 }

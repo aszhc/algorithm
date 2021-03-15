@@ -4,8 +4,8 @@ package main
 * 1. 把待排序数组分为已排序和未排序两部分，初始时把第一个元素认为是已排好序的
 * 2. 从第二个元素开始，在已排好序的子数组中寻找合适的位置插入该位置
 * 3. 重复上述过程知道最后一个元素被插入
-*/
-func insertSort(nums []int) []int {
+ */
+func InsertSort(nums []int) []int {
 	for i := 1; i < len(nums); i++ {
 		for j := i; j > 0; j-- {
 			if nums[j-1] > nums[j] {

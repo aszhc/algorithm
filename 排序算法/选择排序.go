@@ -1,7 +1,7 @@
 package main
 
 // 每一轮选出最小的放在最前面， 选择排序
-func selectSort(nums []int) []int{
+func SelectSort(nums []int) []int {
 	for i := 0; i < len(nums)-1; i++ {
 		for j := i + 1; j < len(nums); j++ {
 			if nums[i] > nums[j] {
